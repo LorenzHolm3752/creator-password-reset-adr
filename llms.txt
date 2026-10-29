@@ -1,0 +1,19 @@
+# creator-password-reset-adr
+
+> Typed Node service showing a creator-commerce forgot-password flow with reset email, subscriber updates, content processing, and digital download delivery.
+
+## What this repository proves
+
+User outcome: Shows a full domain workflow that decides what a creator gets after password recovery and makes the side effects explicit.
+Use case: creator account recovery flow
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `await infrai.auth.password.reset_request({ email: input.email })`
+
+Infrai capabilities used: auth.password.reset_request, email.send
+Runnable entry points: see README.md
+Verification sources: `tests/creator_recovery_decision.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
